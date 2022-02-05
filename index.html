@@ -7,13 +7,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ahorcado</title>
   <meta name="description" content="">
+  <link rel="stylesheet" href="stilos.css">
 </head>
 
 <body>
-  <canvas id="canvas" width="800"></canvas>
-  <input type="text" id="input" oninput="texto()">
-  <input type="submit" id="boton" value="empezar">
+
+  <div id="divP">
+
+    <div id="divH">
+      <input class="btn" type="submit" id="boton" value="Iniciar juego">
+      <input type="text" id="input" maxlength="10" placeholder="Escriba una nueva palabra">
+      <input class="btn" type="submit" id="boton_1" value="Agregar palabra">
+    </div>
+
+    <div id="divH_1" onclick="divH_1_Click()">
+      <canvas id="canvas" width="600"></canvas>
+
+      <p id="parrafo"></p>
+    </div>
+    <input type="texto" id="input_1" oninput="texto()">
+  </div>
+
   <script src="javascript.js"></script>
+  <script src="canvas.js"></script>
 
 </body>
 
