@@ -12,7 +12,14 @@
 }
 
 #canvas {
-  width: 50vw;
+  width: 40vw;
+  position: absolute;
+  bottom: 10%;
+  right: 10vw;
+}
+
+#canvas_1 {
+  width: 40vw;
 }
 
 .btn {
