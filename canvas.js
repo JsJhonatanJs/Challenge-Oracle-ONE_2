@@ -1,18 +1,30 @@
-let canvas_1 = document.querySelector("#canvas_1");
-let lienzo_1 = canvas_1.getContext("2d");
+let canvas = document.querySelector("#canvas");
+let lienzo = canvas.getContext("2d");
+
+function pizarra(palabra, x, x1, x2, hP, hL, hL2) {
+  lienzo.font = "bold 50px verdana";
+  lienzo.textAling = "start";
+  lienzo.textBaseline = "buttom";
+  lienzo.fillText(palabra, x, hP);
+  lienzo.moveTo(x1, hL);
+  lienzo.lineTo(x2, hL2);
+  lienzo.lineWidth = 10;
+  lienzo.lineCap = "round";
+  lienzo.stroke();
+}
 
 function ahorcado(xi, xf, yi, yf) {
-  lienzo_1.moveTo(xi, yi);
-  lienzo_1.lineTo(xf, yf);
-  lienzo_1.lineWidth = 10;
-  lienzo_1.lineCap = "round";
-  lienzo_1.stroke();
+  lienzo.moveTo(xi, yi);
+  lienzo.lineTo(xf, yf);
+  lienzo.lineWidth = 10;
+  lienzo.lineCap = "round";
+  lienzo.stroke();
 }
 
 function ahorcadoC(cX, cY, r) {
-  lienzo_1.beginPath();
-  lienzo_1.arc(cX, cY, r, 0, 2 * 3.14);
-  lienzo_1.stroke();
+  lienzo.beginPath();
+  lienzo.arc(cX, cY, r, 0, 2 * 3.14);
+  lienzo.stroke();
 }
 
 ahorcado(10, 200, 490, 490);

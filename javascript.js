@@ -1,10 +1,10 @@
 function espacio() {
   let letras = separador;
-  let a = 7;
-  let b = 10;
-  let c = 44;
+  let a = 240;
+  let b = 240;
+  let c = 280;
   for (let i = 0; i < palabras.length; i++) {
-    pizarra(letras[i], a, b, c, 50, 66, 66);
+    pizarra(letras[i], a, b, c, 470, 490, 490);
     a = a + 60;
     b = b + 60;
     c = c + 60;
@@ -42,18 +42,6 @@ function parrafo_1() {
   }
 }
 
-function pizarra(palabra, x, x1, x2, hP, hL, hL2) {
-  lienzo.font = "bold 50px verdana";
-  lienzo.textAling = "start";
-  lienzo.textBaseline = "buttom";
-  lienzo.fillText(palabra, x, hP);
-  lienzo.moveTo(x1, hL);
-  lienzo.lineTo(x2, hL2);
-  lienzo.lineWidth = 10;
-  lienzo.lineCap = "round";
-  lienzo.stroke();
-}
-
 function divH_1_Click() {
   input_1.focus();
 }
@@ -78,8 +66,6 @@ let boton_1 = document.querySelector("#boton_1");
 let parrafo = document.querySelector("#parrafo");
 let divH = document.querySelector("#divH");
 let divH_1 = document.querySelector("#divH_1");
-let canvas = document.querySelector("#canvas");
-let lienzo = canvas.getContext("2d");
 
 let arreglo = ["jhonatan", "alura", "challenge", "oracle"];
 let palabras = "";
