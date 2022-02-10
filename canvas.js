@@ -39,30 +39,70 @@ function ahorcadoC(cX, cY, r, c) {
   lienzo.stroke();
 }
 
+function dibujoAhorcado() {
+  if (arregloError.length === 1) {
+    ahorcado(100, 100, 450, 10, "brown");
+  }
+
+  if (arregloError.length === 2) {
+    ahorcado(100, 400, 10, 10, "brown");
+  }
+
+  if (arregloError.length === 3) {
+    ahorcado(400, 400, 10, 80, "brown");
+  }
+
+  if (arregloError.length === 4) {
+    ahorcadoC(400, 120, 40, "black");
+  }
+
+  if (arregloError.length === 5) {
+    ahorcado(400, 400, 160, 350, "black");
+  }
+
+  if (arregloError.length === 6) {
+    ahorcado(400, 310, 250, 182, "black");
+  }
+
+  if (arregloError.length === 7) {
+    ahorcado(400, 490, 250, 180, "black");
+  }
+
+  if (arregloError.length === 8) {
+    ahorcado(400, 310, 350, 420, "black");
+  }
+
+  if (arregloError.length === 9) {
+    ahorcado(400, 490, 350, 420, "black");
+  }
+
+  if (arregloError.length === 10) {
+    ahorcado(380, 390, 110, 100, "black");
+    ahorcado(380, 390, 100, 110, "black");
+    ahorcado(410, 420, 110, 100, "black");
+    ahorcado(410, 420, 100, 110, "black");
+    ahorcado(410, 390, 140, 140, "black");
+  }
+}
+
+function triangulo() {
+  ahorcado(10, 200, 490, 490, "brown");
+  ahorcado(10, 100, 490, 450, "brown");
+  ahorcado(200, 100, 490, 450, "brown");
+}
+function volverAJugar() {
+  canvas.width = canvas.width;
+  arregloError = [];
+  palabras = "";
+  Parrafo_1();
+  Parrafo_2();
+  triangulo();
+  numeroAleratorio();
+}
+
 let canvas = document.querySelector("#canvas");
 let lienzo = canvas.getContext("2d");
 
-ahorcado(10, 200, 490, 490, "brown");
-ahorcado(10, 100, 490, 450, "brown");
-ahorcado(200, 100, 490, 450, "brown");
+boton_2.onclick = volverAJugar;
 
-ahorcado(100, 100, 450, 10, "brown");
-
-ahorcado(100, 400, 10, 10, "brown");
-
-ahorcado(400, 400, 10, 80, "brown");
-
-ahorcadoC(400, 120, 40, "black");
-ahorcado(380, 390, 110, 100, "black");
-ahorcado(380, 390, 100, 110, "black");
-ahorcado(410, 420, 110, 100, "black");
-ahorcado(410, 420, 100, 110, "black");
-ahorcado(410, 390, 140, 140, "black");
-
-ahorcado(400, 400, 160, 350, "black");
-
-ahorcado(400, 310, 250, 182, "black");
-ahorcado(400, 490, 250, 180, "black");
-
-ahorcado(400, 310, 350, 420, "black");
-ahorcado(400, 490, 350, 420, "black");
+triangulo();

@@ -12,20 +12,44 @@
 
 <body>
 
+  <h1 id="titulo">Ahorcado</h1>
+
+  <p id="parrafo_1"></p>
+  <p id="parrafo_2"></p>
+
+
   <div id="divP">
 
     <div id="divH">
       <input class="btn" type="submit" id="boton" value="Iniciar juego">
       <input type="text" id="input" maxlength="10" placeholder="Escriba una nueva palabra">
+      <p id="parrafo">No se admite acentos, números o caracteres</p>
+      <p id="parrafoE">La palabra ya existe, ingrese otra</p>
       <input class="btn" type="submit" id="boton_1" value="Agregar palabra">
     </div>
 
-    <div id="divH_1" onclick="divH_1_Click()">
-      <canvas id="canvas" width="830" height="500"></canvas>
-      <p id="parrafo"></p>
+    <div id="divA">
+      <input type="text" id="input_A" maxlength="10" placeholder="Escriba una nueva palabra">
+      <p id="parrafoA">No se admite acentos, números o caracteres</p>
+      <p id="parrafoAE">La palabra ya existe, ingrese otra</p>
+      <input class="btn_2" type="submit" id="boton_4" value="Agregar palabra">
+      <input class="btn_2" type="submit" id="boton_5" value="Volver al juego">
     </div>
+
+    <div id="divH_1" onclick="divH_1_Click()">
+      <canvas id="canvas" width="1100" height="500"></canvas>
+
+      <div id="divB">
+        <input class="btn_1" type="submit" id="boton_2" value="Volver a Jugar">
+        <input class="btn_1" type="submit" id="boton_3" value="Agregar palabra">
+      </div>
+
+    </div>
+
     <input type="texto" id="input_1" oninput="texto()">
+
   </div>
+
 
   <script src="javascript.js"></script>
   <script src="canvas.js"></script>
