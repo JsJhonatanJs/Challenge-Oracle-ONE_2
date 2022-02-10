@@ -171,7 +171,6 @@ function regresarAlJuego() {
   divA.style.display = "none";
   input_1.style.display = "block";
   boton_3.style.display = "inline";
-  input_1.focus();
   boton_2.disabled = false;
   boton_3.disabled = false;
 }
@@ -198,7 +197,7 @@ let divH = document.querySelector("#divH");
 let divH_1 = document.querySelector("#divH_1");
 let divA = document.querySelector("#divA");
 
-let arreglo = ["jhonatan", "alura", "challenge", "oracle"];
+let arreglo = ["jhonatan", "alura", "challenge", "oracle", "discord", "peru", "puerta", "albañil", ];
 let arregloError = [];
 let palabras = "";
 let separador = space().split("");
