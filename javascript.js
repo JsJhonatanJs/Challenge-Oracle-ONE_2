@@ -197,7 +197,7 @@ let divH = document.querySelector("#divH");
 let divH_1 = document.querySelector("#divH_1");
 let divA = document.querySelector("#divA");
 
-let arreglo = ["jhonatan", "alura", "challenge", "oracle", "discord", "peru", "puerta", "albañil", ];
+let arreglo = ["jhonatan", "alura", "challenge", "oracle", "discord", "peru", "puerta", "albañil", "christian", "mauricio", "jeanmarie", "genesys"];
 let arregloError = [];
 let palabras = "";
 let separador = space().split("");

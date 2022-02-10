@@ -3,139 +3,280 @@
   margin: 0 auto;
 }
 
-#divP {
-  background-color: white;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (max-width: 1024px) {
+  #divP {
+    background-color: white;
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #divA {
+    position: absolute;
+    padding: 1vw;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.144);
+    border-radius: 0.5vw;
+  }
+
+  #divB {
+    position: absolute;
+    width: 80vw;
+    text-align: center;
+  }
+
+  #titulo {
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+    font-size: 10vw;
+  }
+
+  #canvas {
+    width: 80vw;
+    height: 50vh;
+  }
+
+  .btn {
+    border: 0;
+    display: block;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 255, 0.877);
+    font-weight: bold;
+    width: 50vw;
+    height: 6vh;
+    font-size: 4vw;
+    border-radius: 0.5vh;
+  }
+
+  .btn_1 {
+    border: 0;
+    color: black;
+    background-color: rgba(128, 128, 128, 0.295);
+    font-weight: bold;
+    width: 50vw;
+    height: 6vh;
+    font-size: 4vw;
+    border-radius: 0.5vh;
+    margin-top: 3vh;
+    margin-left: 1vw;
+  }
+
+  .btn_2 {
+    display: block;
+    border: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.582);
+    font-weight: bold;
+    width: 50vw;
+    height: 6vh;
+    font-size: 4w;
+    border-radius: 0.5vh;
+    margin-top: 0.5vw;
+  }
+
+  #input {
+    width: 50vw;
+    height: 6vh;
+    font-size: 4vw;
+    border-radius: 0.5vh;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: block;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+  }
+
+  #input_A {
+    width: 50vw;
+    height: 6vh;
+    font-size: 4vw;
+    border-radius: 0.5vh;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: block;
+  }
+
+  #parrafo {
+    color: red;
+    font-size: 4vw;
+  }
+
+  #parrafoE {
+    color: red;
+    font-size: 4vw;
+  }
+
+  #parrafoA {
+    color: red;
+    font-size: 4vw;
+  }
+
+  #parrafoAE {
+    color: red;
+    font-size: 4vw;
+  }
+
+  #parrafo_1 {
+    color: rgba(4, 255, 4, 0.342);
+    font-size: 10vw;
+    position: absolute;
+    top: 10vh;
+    right: 14vw;
+  }
+
+  #parrafo_2 {
+    color: rgba(255, 0, 0, 0.397);
+    font-size: 10vw;
+    position: absolute;
+    top: 10vh;
+    right: 14vw;
+  }
+
+  #input_1 {
+    position: absolute;
+    right: 0vw;
+    z-index: -1;
+    width: 0vw;
+    height: 0vh;
+  }
 }
 
-#divA {
-  position: absolute;
-  padding: 1vw;
-  text-align: center;
-  background-color: rgba(128, 128, 128, 0.144);
-  border-radius: 0.5vw;
-}
+@media (min-width: 1024px) {
+  #divP {
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-#divB {
-  position: absolute;
-  width: 80vw;
-  text-align: center;
-}
+  #divA {
+    position: absolute;
+    padding: 1vw;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.144);
+    border-radius: 0.5vw;
+  }
 
-#titulo {
-  position: absolute;
-  width: 100vw;
-  text-align: center;
-  font-size: 4vw;
-}
+  #divB {
+    position: absolute;
+    width: 80vw;
+    text-align: center;
+  }
 
-#canvas {
-  width: 80vw;
-  height: 80vh;
-}
+  #titulo {
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+    font-size: 4vw;
+  }
 
-.btn {
-  border: 0;
-  display: block;
-  color: rgb(255, 255, 255);
-  background-color: rgba(0, 0, 255, 0.877);
-  font-weight: bold;
-  width: 10vw;
-  height: 4vh;
-  font-size: 1vw;
-  border-radius: 0.5vh;
-}
+  #canvas {
+    width: 80vw;
+    height: 80vh;
+  }
 
-.btn_1 {
-  border: 0;
-  color: black;
-  background-color: rgba(128, 128, 128, 0.295);
-  font-weight: bold;
-  width: 10vw;
-  height: 4vh;
-  font-size: 1vw;
-  border-radius: 0.5vh;
-  margin-top: 3vh;
-  margin-left: 1vw;
-}
+  .btn {
+    border: 0;
+    display: block;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 255, 0.877);
+    font-weight: bold;
+    width: 13vw;
+    height: 4vh;
+    font-size: 1vw;
+    border-radius: 0.5vh;
+  }
 
-.btn_2 {
-  display: block;
-  border: 0;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.582);
-  font-weight: bold;
-  width: 10vw;
-  height: 4vh;
-  font-size: 1vw;
-  border-radius: 0.5vh;
-  margin-top: 0.5vw;
-}
+  .btn_1 {
+    border: 0;
+    color: black;
+    background-color: rgba(128, 128, 128, 0.295);
+    font-weight: bold;
+    width: 10vw;
+    height: 4vh;
+    font-size: 1vw;
+    border-radius: 0.5vh;
+    margin-top: 3vh;
+    margin-left: 1vw;
+  }
 
-#input {
-  width: 13vw;
-  height: 4vh;
-  font-size: 1vw;
-  border-radius: 0.5vh;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  display: block;
-  margin-top: 3vh;
-  margin-bottom: 1vh;
-}
+  .btn_2 {
+    display: block;
+    border: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.582);
+    font-weight: bold;
+    width: 10vw;
+    height: 4vh;
+    font-size: 1vw;
+    border-radius: 0.5vh;
+    margin-top: 0.5vw;
+  }
 
-#input_A {
-  width: 13vw;
-  height: 4vh;
-  font-size: 1vw;
-  border-radius: 0.5vh;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  display: block;
-}
+  #input {
+    width: 13vw;
+    height: 4vh;
+    font-size: 1vw;
+    border-radius: 0.5vh;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: block;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+  }
 
-#parrafo {
-  color: red;
-  font-size: 1vw;
-}
+  #input_A {
+    width: 13vw;
+    height: 4vh;
+    font-size: 1vw;
+    border-radius: 0.5vh;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: block;
+  }
 
-#parrafoE {
-  color: red;
-  font-size: 1vw;
-}
+  #parrafo {
+    color: red;
+    font-size: 1vw;
+  }
 
-#parrafoA {
-  color: red;
-  font-size: 1vw;
-}
+  #parrafoE {
+    color: red;
+    font-size: 1vw;
+  }
 
-#parrafoAE {
-  color: red;
-  font-size: 1vw;
-}
+  #parrafoA {
+    color: red;
+    font-size: 1vw;
+  }
 
-#parrafo_1 {
-  color: rgba(4, 255, 4, 0.342);
-  font-size: 10vw;
-  position: absolute;
-  top: 10vh;
-  right: 14vw;
-}
+  #parrafoAE {
+    color: red;
+    font-size: 1vw;
+  }
 
-#parrafo_2 {
-  color: rgba(255, 0, 0, 0.397);
-  font-size: 10vw;
-  position: absolute;
-  top: 10vh;
-  right: 14vw;
-}
+  #parrafo_1 {
+    color: rgba(4, 255, 4, 0.342);
+    font-size: 10vw;
+    position: absolute;
+    top: 10vh;
+    right: 14vw;
+  }
 
-#input_1 {
-  position: absolute;
-  right: 0vw;
-  z-index: -1;
-  width: 0vw;
-  height: 0vh;
+  #parrafo_2 {
+    color: rgba(255, 0, 0, 0.397);
+    font-size: 10vw;
+    position: absolute;
+    top: 10vh;
+    right: 14vw;
+  }
+
+  #input_1 {
+    position: absolute;
+    right: 0vw;
+    z-index: -1;
+    width: 0vw;
+    height: 0vh;
+  }
 }
