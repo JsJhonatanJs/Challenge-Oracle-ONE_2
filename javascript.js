@@ -80,8 +80,10 @@ function Parrafo_1() {
   if (cloud === palabras) {
     parrafo_1.innerHTML = "Ganaste";
     input_1.style.display = "none";
+    bugVolverAlJuego = 1;
   } else {
     parrafo_1.innerHTML = "";
+    bugVolverAlJuego = 0;
   }
 }
 
@@ -89,8 +91,10 @@ function Parrafo_2() {
   if (arregloError.length === 10) {
     parrafo_2.innerHTML = "Perdiste";
     input_1.style.display = "none";
+    bugVolverAlJuego_1= 1;
   } else {
     parrafo_2.innerHTML = "";
+    bugVolverAlJuego_1 = 0;
   }
 }
 
@@ -112,12 +116,15 @@ function agregarPalabra() {
     if (comprobar === 0) {
       arreglo.push(input.value.toLowerCase());
       input.value = "";
+      input.focus()
     } else {
       parrafoE_Esconder = parrafoE.style.display = "none";
       parrafoEsconder = parrafo.style.display = "block";
       setTimeout(function () {
         parrafoEsconder = parrafo.style.display = "none";
       }, 3000);
+
+      input.focus()
     }
   } else {
     parrafoEsconder = parrafo.style.display = "none";
@@ -125,6 +132,8 @@ function agregarPalabra() {
     setTimeout(function () {
       parrafoE_Esconder = parrafoE.style.display = "none";
     }, 2000);
+
+    input.focus()
   }
 }
 
@@ -151,12 +160,15 @@ function añadirPalabra() {
     if (comprobarA === 0) {
       arreglo.push(input_A.value.toLowerCase());
       input_A.value = "";
+      input_A.focus();
     } else {
       parrafoAE_Esconder = parrafoAE.style.display = "none";
       parrafoAEsconder = parrafoA.style.display = "block";
       setTimeout(function () {
         parrafoAEsconder = parrafoA.style.display = "none";
       }, 3000);
+
+      input_A.focus();
     }
   } else {
     parrafoAEsconder = parrafoA.style.display = "none";
@@ -164,12 +176,22 @@ function añadirPalabra() {
     setTimeout(function () {
       parrafoAE_Esconder = parrafoAE.style.display = "none";
     }, 2000);
+    
+    input_A.focus();
   }
 }
 
 function regresarAlJuego() {
+  let suma = bugVolverAlJuego + bugVolverAlJuego_1
+
+  if (suma === 0) {
+    input_1.style.display = "block";
+    input_1.focus();
+  } else {
+    input_1.style.display = "none";
+  }
+
   divA.style.display = "none";
-  input_1.style.display = "block";
   boton_3.style.display = "inline";
   boton_2.disabled = false;
   boton_3.disabled = false;
@@ -206,6 +228,9 @@ let parrafoEsconder = (parrafo.style.display = "none");
 let parrafoE_Esconder = (parrafoE.style.display = "none");
 let parrafoAEsconder = (parrafoA.style.display = "none");
 let parrafoAE_Esconder = (parrafoAE.style.display = "none");
+
+let bugVolverAlJuego = 0;
+let bugVolverAlJuego_1 = 0;
 
 boton.onclick = numeroAleratorio;
 boton_1.onclick = agregarPalabra;
