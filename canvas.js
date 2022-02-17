@@ -1,108 +1,107 @@
-function pizarra(palabra, x, x1, x2, hP, hL, hL2) {
-  lienzo.font = "bold 50px verdana";
-  lienzo.textAling = "start";
-  lienzo.textBaseline = "buttom";
-  lienzo.fillStyle = "green";
-  lienzo.fillText(palabra, x, hP);
+//funcion para pintar letras y crear guiones
+function pintardorDeLetrasGuiones(letra, x, y, xM, yM, xL, yL) {
+  //letras verdes
+  pincel.font = "bold 50px verdana";
+  pincel.textAling = "start";
+  pincel.textBaseline = "buttom";
+  pincel.fillStyle = "green";
+  pincel.fillText(letra, x, y);
 
-  lienzo.beginPath();
-  lienzo.strokeStyle = "blue";
-  lienzo.moveTo(x1, hL);
-  lienzo.lineTo(x2, hL2);
-  lienzo.lineWidth = 10;
-  lienzo.lineCap = "round";
-  lienzo.stroke();
+  //guiones azules
+  pincel.beginPath();
+  pincel.strokeStyle = "blue";
+  pincel.moveTo(xM, yM);
+  pincel.lineTo(xL, yL);
+  pincel.lineWidth = 10;
+  pincel.lineCap = "round";
+  pincel.stroke();
 }
 
-function pizarraError(palabra, x, y) {
-  lienzo.font = "bold 50px verdana";
-  lienzo.textAling = "start";
-  lienzo.textBaseline = "buttom";
-  lienzo.fillStyle = "red";
-  lienzo.fillText(palabra, x, y);
+//funcion para pintar letras erroneas
+function pintadorDeLetrasErroneas(letra, x, y) {
+  //letras rojas
+  pincel.font = "bold 50px verdana";
+  pincel.textAling = "start";
+  pincel.textBaseline = "buttom";
+  pincel.fillStyle = "red";
+  pincel.fillText(letra, x, y);
 }
 
-function ahorcado(xi, xf, yi, yf, c) {
-  lienzo.beginPath();
-  lienzo.strokeStyle = c;
-  lienzo.moveTo(xi, yi);
-  lienzo.lineTo(xf, yf);
-  lienzo.lineWidth = 10;
-  lienzo.lineCap = "round";
-  lienzo.stroke();
+//funcion que crea las lineas segun las coordenadas
+function ahorcado(xM, yM, xL, yL, color) {
+  //dibujado de lineas
+  pincel.beginPath();
+  pincel.strokeStyle = color;
+  pincel.moveTo(xM, yM);
+  pincel.lineTo(xL, yL);
+  pincel.lineWidth = 10;
+  pincel.lineCap = "round";
+  pincel.stroke();
 }
 
-function ahorcadoC(cX, cY, r, c) {
-  lienzo.beginPath();
-  lienzo.strokeStyle = c;
-  lienzo.arc(cX, cY, r, 0, 2 * 3.14);
-  lienzo.stroke();
+//funcion para dibujar circulos
+function ahorcadoCirculo(x, y, r, colorCirculo) {
+  //dibujado de circulo
+  pincel.beginPath();
+  pincel.strokeStyle = colorCirculo;
+  pincel.arc(x, y, r, 0, 2 * Math.PI);
+  pincel.lineWidth = 10;
+  pincel.stroke();
 }
 
-function dibujoAhorcado() {
-  if (arregloError.length === 1) {
-    ahorcado(100, 100, 450, 10, "brown");
-  }
-
-  if (arregloError.length === 2) {
-    ahorcado(100, 400, 10, 10, "brown");
-  }
-
-  if (arregloError.length === 3) {
-    ahorcado(400, 400, 10, 80, "brown");
-  }
-
-  if (arregloError.length === 4) {
-    ahorcadoC(400, 120, 40, "black");
-  }
-
-  if (arregloError.length === 5) {
-    ahorcado(400, 400, 160, 350, "black");
-  }
-
-  if (arregloError.length === 6) {
-    ahorcado(400, 310, 250, 182, "black");
-  }
-
-  if (arregloError.length === 7) {
-    ahorcado(400, 490, 250, 180, "black");
-  }
-
-  if (arregloError.length === 8) {
-    ahorcado(400, 310, 350, 420, "black");
-  }
-
-  if (arregloError.length === 9) {
-    ahorcado(400, 490, 350, 420, "black");
-  }
-
-  if (arregloError.length === 10) {
-    ahorcado(380, 390, 110, 100, "black");
-    ahorcado(380, 390, 100, 110, "black");
-    ahorcado(410, 420, 110, 100, "black");
-    ahorcado(410, 420, 100, 110, "black");
-    ahorcado(410, 390, 140, 140, "black");
-  }
-}
-
+//funcion para dibujar el triangulo
 function triangulo() {
-  ahorcado(10, 200, 490, 490, "brown");
-  ahorcado(10, 100, 490, 450, "brown");
-  ahorcado(200, 100, 490, 450, "brown");
-}
-function volverAJugar() {
-  canvas.width = canvas.width;
-  arregloError = [];
-  palabras = "";
-  Parrafo_1();
-  Parrafo_2();
-  triangulo();
-  numeroAleratorio();
+  ahorcado(10, 490, 200, 490, "brown");
+  ahorcado(10, 490, 100, 450, "brown");
+  ahorcado(200, 490, 100, 450, "brown");
 }
 
-let canvas = document.querySelector("#canvas");
-let lienzo = canvas.getContext("2d");
+//funcion que comprueba si letrasErroneas tiene letras equivocadas si letras erroneas tiene 1 entonces se va dibujar la primera parte del ahocado y si tiene 2 la siguiente parte asi sucesivamente
+function dibujoAhorcado() {
+  if (letrasErroneas.length === 1) {
+    ahorcado(100, 450, 100, 10, "brown");
+  }
 
-boton_2.onclick = volverAJugar;
+  if (letrasErroneas.length === 2) {
+    ahorcado(100, 10, 400, 10, "brown");
+  }
 
-triangulo();
+  if (letrasErroneas.length === 3) {
+    ahorcado(400, 10, 400, 80, "brown");
+  }
+
+  if (letrasErroneas.length === 4) {
+    ahorcadoCirculo(400, 120, 40, "black");
+  }
+
+  if (letrasErroneas.length === 5) {
+    ahorcado(400, 160, 400, 350, "black");
+  }
+
+  if (letrasErroneas.length === 6) {
+    ahorcado(400, 250, 310, 182, "black");
+  }
+
+  if (letrasErroneas.length === 7) {
+    ahorcado(400, 250, 490, 180, "black");
+  }
+
+  if (letrasErroneas.length === 8) {
+    ahorcado(400, 350, 310, 420, "black");
+  }
+
+  if (letrasErroneas.length === 9) {
+    ahorcado(400, 350, 490, 420, "black");
+  }
+
+  if (letrasErroneas.length === 10) {
+    ahorcado(380, 110, 390, 100, "black");
+    ahorcado(380, 100, 390, 110, "black");
+    ahorcado(410, 110, 420, 100, "black");
+    ahorcado(410, 100, 420, 110, "black");
+    ahorcado(410, 140, 390, 140, "black");
+  }
+}
+
+let canvas = document.querySelector("canvas");
+let pincel = canvas.getContext("2d");

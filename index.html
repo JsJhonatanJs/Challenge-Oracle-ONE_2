@@ -8,48 +8,61 @@
   <title>Ahorcado</title>
   <meta name="description" content="El juego del ahorcado es un juego donde debes adivinar la palabra oculta">
   <link rel="stylesheet" href="stilos.css">
+  <link rel="stylesheet" href="grid.css">
 </head>
 
 <body>
 
-  <h1 id="titulo">Ahorcado</h1>
+  <!-- contenedor que centra todo -->
+  <div class="contenedor">
 
-  <p id="parrafo_1"></p>
-  <p id="parrafo_2"></p>
-
-
-  <div id="divP">
-
-    <div id="divH">
-      <input class="btn" type="submit" id="boton" value="Iniciar juego">
-      <input type="text" id="input" maxlength="10" placeholder="Escriba una nueva palabra">
-      <p id="parrafo">No se admite acentos, números o caracteres</p>
-      <p id="parrafoE">La palabra ya existe, ingrese otra</p>
-      <input class="btn" type="submit" id="boton_1" value="Agregar palabra">
+    <!-- contiene todo el menu de inicio del juego -->
+    <div class=" contenedorInicio" id="contenedorInicio">
+      <!-- titulo del inicio -->
+      <h1 class="tituloInicio" id="tituloInicio">Juego del ahorcado</h1>
+      <!-- boton iniciar juego -->
+      <input class="btn" id="boton" type="submit" value="Iniciar juego">
+      <!-- input para agregar las palabras -->
+      <input class="input_1" id="input_1" type="text" placeholder="Escriba una nueva palabra" oninput="maxLetras()">
+      <!-- parrafo que informa el error al usuario -->
+      <p class="parrafoError" id="parrafoError"></p>
+      <!-- boton para agregar las palabras -->
+      <input class="btn" id="boton_1" type="submit" value="Agregar palabra">
     </div>
 
-    <div id="divA">
-      <input type="text" id="input_A" maxlength="10" placeholder="Escriba una nueva palabra">
-      <p id="parrafoA">No se admite acentos, números o caracteres</p>
-      <p id="parrafoAE">La palabra ya existe, ingrese otra</p>
-      <input class="btn_2" type="submit" id="boton_4" value="Agregar palabra">
-      <input class="btn_2" type="submit" id="boton_5" value="Volver al juego">
+
+    <!-- input para que el usuario ingrese las letras y vaya adivinando la palabra -->
+    <input id="input" class="input" type="text" oninput="ingresarLetra()" style="display: none">
+
+    <!-- contiene el juego del ahorcado -->
+    <div class="contenedorAhorcado" id="contenedorAhorcado" style="display: none">
+      <!-- titulo del juego -->
+      <h1 class="titulo">Juego del ahorcado</h1>
+      <p class="Gano-Perdio" id="Gano-Perdio"></p>
+      <!-- canvas que se van dinujando las letras y el ahorcado -->
+      <canvas width="1100" height="500" onclick="input.focus();"></canvas>
+      <!-- boton para volver a jugar -->
+      <input class="btn_1" id="boton_2" type="submit" value="Volver a jugar">
+      <!-- boton para agregar palabras -->
+      <input class="btn_1" id="boton_3" type="submit" value="Agregar palabra">
     </div>
 
-    <div id="divH_1" onclick="divH_1_Click()">
-      <canvas id="canvas" width="1100" height="500"></canvas>
+    <!-- centra el contenedor hijo de agregar palabra -->
+    <div class="contenedorAhorcadoAgregarPalabra" id="contenedorAhorcadoAgregarPalabra" style="display: none">
 
-      <div id="divB">
-        <input class="btn_1" type="submit" id="boton_2" value="Volver a Jugar">
-        <input class="btn_1" type="submit" id="boton_3" value="Agregar palabra">
+      <div class="contenedorMenuAgregarPalabra">
+        <!-- input para agregar las palabras desde el juego del ahorcado-->
+        <input class="input_1" id="input_2" type="text" placeholder="Escriba una nueva palabra"
+          oninput="maxLetrasAhorcado()">
+        <!-- parrafo que informa el error al usuario -->
+        <p class="parrafoError" id="parrafoErrorAhorcado"></p>
+        <input class="btn_2" id="boton_4" type="submit" value="Agregar palabra">
+        <input class="btn_2" id="boton_5" type="submit" value="Volver al Juego">
       </div>
 
     </div>
 
-    <input type="texto" id="input_1" oninput="texto()">
-
   </div>
-
 
   <script src="javascript.js"></script>
   <script src="canvas.js"></script>
