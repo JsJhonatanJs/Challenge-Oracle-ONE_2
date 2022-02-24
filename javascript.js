@@ -111,8 +111,8 @@ function EliminarMensajeDeError() {
   clearTimeout(tiempo);
   //vuelve a poner el tiempo despues de haberlo eliminado
   tiempo = setTimeout(() => {
-    parrafoError.innerHTML = "";
-    parrafoErrorAhorcado.innerHTML = "";
+    parrafoError.textContent = "";
+    parrafoErrorAhorcado.textContent = "";
   }, 3000);
 }
 
@@ -138,17 +138,17 @@ function agregarPalabrasInicio() {
         input_1.value = "";
         input_1.focus();
       } else {
-        parrafoError.innerHTML = '"' + input_1.value + '"' + " ya fue agregado";
+        parrafoError.textContent = '"' + input_1.value + '"' + " ya fue agregado";
         EliminarMensajeDeError();
         input_1.focus();
       }
     } else {
-      parrafoError.innerHTML = "No puede agregar numeros o letras con acentos";
+      parrafoError.textContent = "No puede agregar numeros o letras con acentos";
       EliminarMensajeDeError();
       input_1.focus();
     }
   } else {
-    parrafoError.innerHTML = "Ingrese una palabra";
+    parrafoError.textContent = "Ingrese una palabra";
     EliminarMensajeDeError();
     input_1.focus();
   }
@@ -158,22 +158,22 @@ function agregarPalabrasInicio() {
 function verificarSiGanoPerdio() {
   //comprueba si la palabraDibujar es igual a la palabra escogida
   if (palabraEscogida === palabraDibujar.join("").toLowerCase()) {
-    parrafoGanoPerdio.innerHTML = "Ganaste";
+    parrafoGanoPerdio.textContent = "Ganaste";
     parrafoGanoPerdio.style.color = "rgba(0, 128, 0, 0.63)";
     input.style.display = "none";
   } else {
-    parrafoGanoPerdio.innerHTML = "";
+    parrafoGanoPerdio.textContent = "";
     input.style.display = "inline";
   }
 
   //comprueba si las letras errones en el array llegan a 10 para insertar el texto de perdiste
   if (letrasErroneas.length === 10) {
-    parrafoGanoPerdio.innerHTML = "Perdiste";
+    parrafoGanoPerdio.textContent = "Perdiste";
     parrafoGanoPerdio.style.color = "rgba(255, 0, 0, 0.397)";
     input.style.display = "none";
   } else {
-    if (parrafoGanoPerdio.innerHTML != "Ganaste") {
-      parrafoGanoPerdio.innerHTML = "";
+    if (parrafoGanoPerdio.textContent != "Ganaste") {
+      parrafoGanoPerdio.textContent = "";
       input.style.display = "inline";
     }
   }
@@ -201,9 +201,9 @@ function maxLetras() {
   input_1.value = input_1.value.slice(0, 10);
   if (input_1.value.length === 10) {
     clearTimeout(tiempo);
-    parrafoError.innerHTML = "Máximo de 10 letras";
+    parrafoError.textContent = "Máximo de 10 letras";
   } else {
-    parrafoError.innerHTML = "";
+    parrafoError.textContent = "";
   }
 }
 
@@ -213,8 +213,6 @@ function abrirMenuAgregarPalabraAhorcado() {
   boton_3.style.display = "none";
   //muestra el menu de agregar palabras en el juego del ahorcado
   contenedorAhorcadoAgregarPalabra.style.display = "flex";
-  //si el usuario dejo una palabra en el input del inicio en el input del juego del ahorcado se pondra esa palabra
-  input_2.value = input_1.value;
   //focus al input_2
   input_2.focus();
 }
@@ -223,10 +221,10 @@ function abrirMenuAgregarPalabraAhorcado() {
 function maxLetrasAhorcado() {
   input_2.value = input_2.value.slice(0, 10);
   if (input_2.value.length === 10) {
-    parrafoErrorAhorcado.innerHTML = "Máximo de 10 letras";
+    parrafoErrorAhorcado.textContent = "Máximo de 10 letras";
     clearTimeout(tiempo);
   } else {
-    parrafoErrorAhorcado.innerHTML = "";
+    parrafoErrorAhorcado.textContent = "";
   }
 }
 
@@ -252,19 +250,19 @@ function agregarPalabrasAhorcado() {
         input_2.value = "";
         input_2.focus();
       } else {
-        parrafoErrorAhorcado.innerHTML =
+        parrafoErrorAhorcado.textContent =
           '"' + input_2.value + '"' + " ya fue agregado";
         EliminarMensajeDeError();
         input_2.focus();
       }
     } else {
-      parrafoErrorAhorcado.innerHTML =
+      parrafoErrorAhorcado.textContent =
         "No puede agregar numeros o letras con acentos";
       EliminarMensajeDeError();
       input_2.focus();
     }
   } else {
-    parrafoErrorAhorcado.innerHTML = "Ingrese una palabra";
+    parrafoErrorAhorcado.textContent = "Ingrese una palabra";
     EliminarMensajeDeError();
     input_2.focus();
   }
@@ -351,8 +349,8 @@ let letrasErroneas = [];
 tiempo = es el tiempo que demora en desaparecer el error del input 
 */
 let tiempo = setTimeout(() => {
-  parrafoError.innerHTML = "";
-  parrafoErrorAhorcado.innerHTML = "";
+  parrafoError.textContent = "";
+  parrafoErrorAhorcado.textContent = "";
 }, 3000);
 
 /*
